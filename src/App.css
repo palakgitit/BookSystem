@@ -1,0 +1,269 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.center{
+
+    text-align: center;
+    margin: 10px;
+}
+
+.option {
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 15px;
+}
+
+.option input,
+.option select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.option input {
+    flex: 2;
+}
+
+.option select {
+    flex: 1;
+}
+body {
+    background-color: #f5f5f5;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.navbar {
+    background: #202c2e;
+    color: white;
+    padding: 15px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.nav-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #b3bbbc;
+}
+
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+
+        background: #222;
+        width: 200px;
+
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+
+form {
+    width: 400px;
+    margin: 30px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form textarea {
+    resize: none;
+    height: 80px;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background: #00bcd4;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #0097a7;
+}
+
+
+
+.page-title {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.book-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+}
+
+.book-card {
+    width: 220px;
+    padding: 15px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.book-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.book-title {
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.book-author,
+.book-price {
+    margin-top: 5px;
+}
+
+.book-author {
+    color: #555;
+    font-size: 12px;
+}
+
+.book-price {
+    color: rgb(73, 164, 73);
+    font-weight: 700;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+
+
+
+table {
+    width: 90%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background: white;
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background: #00bcd4;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+
+
+.search-box {
+    display: block;
+    width: 300px;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+button {
+    padding: 6px 12px;
+    margin: 3px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-btn {
+    background: #e53935;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #c62828;
+}
+
+.edit-btn {
+    background: #ff9800;
+    color: white;
+}
+
+.edit-btn:hover {
+    background: #ef6c00;
+}
