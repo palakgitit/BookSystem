@@ -5,7 +5,7 @@ function BookViewTable() {
 
     const [books, setBooks] = useState([]);
     const [search, setSearch] = useState("");
-    const [sortOrder, setSortOrder] = useState("");
+    const [sortOrder, setSortOrder] = useState("az");
     const [priceFilter, setPriceFilter] = useState("");
     const [editId, setEditId] = useState(null);
     const [editedBook, setEditedBook] = useState({});
@@ -42,29 +42,30 @@ function BookViewTable() {
         });
     };
 
-    let filteredBooks = books.filter((book) =>
+    let filteredBooks = [...books].filter((book) =>
         book.name.toLowerCase().includes(search.toLowerCase())
     );
 
     if (sortOrder === "az") {
         filteredBooks = [...filteredBooks].sort((a, b) =>
-            a.name.localeCompare(b.name)
+            a.name.trim().toLowerCase().localeCompare(b.name.trim().toLowerCase())
         );
     }
 
     if (sortOrder === "za") {
         filteredBooks = [...filteredBooks].sort((a, b) =>
-            b.name.localeCompare(a.name)
+            b.name.trim().toLowerCase().localeCompare(a.name.trim().toLowerCase())
         );
     }
 
     if (priceFilter === "low") {
-        filteredBooks = filteredBooks.filter((book) => book.price <= 500);
+        filteredBooks = filteredBooks.filter((book) => Number(book.price) <= 500);
     }
 
     if (priceFilter === "high") {
-        filteredBooks = filteredBooks.filter((book) => book.price > 500);
+        filteredBooks = filteredBooks.filter((book) => Number(book.price) > 500);
     }
+
 
     return (
         <div>
@@ -78,7 +79,7 @@ function BookViewTable() {
                     onChange={(e) => setSearch(e.target.value)}
                 />
 
-                <select onChange={(e) => setSortOrder(e.target.value)}>
+                <select value={sortOrder} onChange={(e) => setSortOrder(e.target.value)}>
                     <option value="">Sort Title</option>
                     <option value="az">A → Z</option>
                     <option value="za">Z → A</option>
